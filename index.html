@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Dungeon Master: Text RPG Adventure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Lora', 'serif'],
+            },
+            colors: {
+              'brand-bg': '#1a1a2e',
+              'brand-surface': '#16213e',
+              'brand-primary': '#0f3460',
+              'brand-secondary': '#e94560',
+              'brand-text': '#dcdcdc',
+              'brand-subtle': '#a7a9be',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              pulseGlow: {
+                '0%, 100%': { 
+                  boxShadow: '0 0 15px rgba(233, 69, 96, 0.4)',
+                  transform: 'scale(1)' 
+                },
+                '50%': { 
+                  boxShadow: '0 0 25px rgba(233, 69, 96, 0.7)',
+                  transform: 'scale(1.02)'
+                 },
+              }
+            },
+            animation: {
+              fadeIn: 'fadeIn 0.5s ease-in-out',
+              pulseGlow: 'pulseGlow 2.5s infinite ease-in-out',
+            },
+          },
+        },
+      };
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.10.0",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-brand-bg text-brand-text font-sans">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
